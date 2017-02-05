@@ -1,0 +1,1 @@
+voy a hacer una  aplición en android que consistira en que los usuarios podran vender articulos y otros usuarios podran comprarlos y si quieren concretar una compra podran tener una chat y subir nuevas imagenes para concretar la compra 
