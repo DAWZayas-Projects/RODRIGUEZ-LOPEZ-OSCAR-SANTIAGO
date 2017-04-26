@@ -1,0 +1,101 @@
+<ListView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:fillViewport="false"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Create Food"
+                android:gravity="center"
+                tools:ignore="HardcodedText" />
+
+            <EditText
+                android:id="@+id/nameFood"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:hint="Name of the food"
+                tools:ignore="HardcodedText" />
+
+            <EditText
+                android:id="@+id/edit_texto"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginEnd="@+id/nameFood"
+                android:gravity="center"
+                android:hint="Write your description"
+                android:inputType="text|textMultiLine"
+                android:paddingTop="100dp"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Step 1 "
+                android:gravity="center"
+                tools:ignore="HardcodedText" />
+
+            <EditText
+                android:id="@+id/step1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:hint="Name of the food"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="step2"
+                android:gravity="center"
+                tools:ignore="HardcodedText" />
+
+            <EditText
+                android:id="@+id/step2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:hint="Name of the food"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Step3"
+                android:gravity="center"
+                tools:ignore="HardcodedText" />
+
+            <EditText
+                android:id="@+id/step3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:hint="Name of the food"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Step 4"
+                android:gravity="center"
+                tools:ignore="HardcodedText" />
+
+            <EditText
+                android:id="@+id/step4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:hint="Name of the food"
+                tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+</ListView>

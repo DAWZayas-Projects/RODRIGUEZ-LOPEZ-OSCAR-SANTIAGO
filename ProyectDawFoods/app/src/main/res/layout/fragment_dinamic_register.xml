@@ -1,0 +1,40 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    tools:context="com.example.oscar.proyectdawfoods.RegisterLogin.DinamicRegister">
+
+    <fragment
+        android:id="@+id/staticInput"
+        android:name="com.example.oscar.proyectdawfoods.RegisterLogin.InputLoginRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout="@layout/fragment_input_login_register"
+        tools:ignore="ObsoleteLayoutParam"
+        android:layout_marginTop="119dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:id="@+id/passwordRepeat"
+        android:labelFor="@string/password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/rep_password"
+        android:layout_below="@id/staticInput"
+        android:layout_alignEnd="@id/staticInput"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/buttonRegister"
+        android:layout_marginTop="60dp"
+        android:text="@string/register"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/passwordRepeat"
+        style="@style/buttonBlue"/>
+</RelativeLayout>
+

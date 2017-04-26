@@ -1,0 +1,53 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.oscar.proyectdawfoods.RegisterLogin.User"
+    android:paddingTop="100dp"
+    >
+
+
+    <EditText
+        android:id="@+id/user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name User"
+        android:layout_gravity="center"
+        tools:ignore="HardcodedText,LabelFor" />
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:text="@string/email"
+        android:layout_gravity="center"
+        tools:ignore="LabelFor" />
+
+
+    <Button
+        android:id="@+id/image"
+        android:layout_margin="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="upload image profile"
+        android:layout_gravity="center"
+        android:background="@color/colorPrimary"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:layout_margin="30dp"
+        android:id="@+id/send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="send"
+
+        android:background="@color/colorPrimary"
+        tools:ignore="HardcodedText" />
+
+
+</LinearLayout>
