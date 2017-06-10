@@ -28,6 +28,6 @@ public class ReciclerViewHolders extends RecyclerView.ViewHolder implements View
 
     @Override
     public void onClick(View view) {
-        Toast.makeText(view.getContext(), "Clicked Country Position = " + getPosition(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(view.getContext(), "Clicked Country Position = " + getItemId(), Toast.LENGTH_SHORT).show();
     }
 }

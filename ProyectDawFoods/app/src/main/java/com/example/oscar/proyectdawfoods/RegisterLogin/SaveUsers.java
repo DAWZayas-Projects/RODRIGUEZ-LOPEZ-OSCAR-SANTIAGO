@@ -23,16 +23,14 @@ public class SaveUsers {
     }
 
     public void saveUser() {
+        if(email != null) name = email;
+
         HashMap<String, Object> result = new HashMap<>();
         result.put("name", name);
         result.put("email", email);
         result.put("photoUrl", photo);
         result.put("provider", provider);
         mDatabase.child("users").child(id).setValue(result);
-
-        mDatabase.child("foods").child("food").child(id).child("user").setValue(name);
-        mDatabase.child("foods").child("food").child(id).child("email").setValue(email);
-        mDatabase.child("foods").child("food").child(id).child("profilePhoto").setValue(photo);
 
     }
 

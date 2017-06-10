@@ -1,5 +1,6 @@
 package com.example.oscar.proyectdawfoods.RegisterLogin;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -16,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.oscar.proyectdawfoods.R;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class AppFoods extends AppCompatActivity {
 
@@ -41,13 +43,14 @@ public class AppFoods extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
+
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_app_foods, menu);
+        getMenuInflater().inflate(R.menu.menu_foods, menu);
         return true;
     }
 
@@ -59,9 +62,11 @@ public class AppFoods extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+
+            FirebaseAuth.getInstance().signOut();
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+
 
         return super.onOptionsItemSelected(item);
     }
@@ -109,8 +114,8 @@ public class AppFoods extends AppCompatActivity {
                     Fragment User = new User();
                     return User;
                 case 1:
-                    Fragment Recipes = new Recipes();
-                    return Recipes;
+                    Fragment resci = new Recipes();
+                    return resci;
             }
             return null;
         }
@@ -127,9 +132,8 @@ public class AppFoods extends AppCompatActivity {
                 case 0:
                     return "User";
                 case 1:
+
                     return "Recipes";
-                case 2:
-                    return "Followers";
             }
             return null;
         }

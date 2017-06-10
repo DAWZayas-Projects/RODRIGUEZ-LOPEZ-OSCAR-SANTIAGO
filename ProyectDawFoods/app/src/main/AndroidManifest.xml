@@ -34,8 +34,8 @@
             android:label="@string/title_activity_app_foods"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".RegisterLogin.CreateFood"
-            android:label="@string/title_activity_create_food"
+            android:name=".RegisterLogin.ScrollingCreateFood"
+            android:label="@string/title_activity_scrolling_create_food"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
     </application>
 

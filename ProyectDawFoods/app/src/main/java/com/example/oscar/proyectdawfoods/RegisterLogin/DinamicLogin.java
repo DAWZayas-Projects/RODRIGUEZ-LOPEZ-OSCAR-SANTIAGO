@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +26,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class DinamicLogin extends Fragment implements View.OnClickListener{
 
@@ -37,6 +40,7 @@ public class DinamicLogin extends Fragment implements View.OnClickListener{
     private LoginButton loginFacebook;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private CallbackManager mCallbackManager;
+    private DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://foods-5078e.firebaseio.com/users");
 
     public DinamicLogin() {
         // Required empty public constructor
@@ -51,15 +55,25 @@ public class DinamicLogin extends Fragment implements View.OnClickListener{
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null){
                     if(user.getPhotoUrl() != null) {
-                        String provider = "facebook";
-                        SaveUsers save = new SaveUsers(user.getUid(), user.getEmail(), user.getDisplayName(), provider);
-                        save.setPhoto(user.getPhotoUrl().toString());
-                        save.saveUser();
+
+                        Log.d("bbbbbbbbbbbb", databaseReference.child(user.getUid()).getKey());
+                        Log.d("bbbbbbbbbbbb", user.getUid());
+                        if (databaseReference.child(user.getUid()).getKey().equals(user.getUid())){
+                            String provider = "facebook";
+                            SaveUsers save = new SaveUsers(user.getUid(), user.getEmail(), user.getDisplayName(), provider);
+                            save.setPhoto(user.getPhotoUrl().toString());
+                            save.saveUser();
+                        }
+
+
+
                     }
                     else{
-                        String provider = "email";
-                        SaveUsers save = new SaveUsers(user.getUid(), user.getEmail(), user.getDisplayName(), provider);
-                        save.saveUser();
+                        if (databaseReference.child(user.getUid()).getKey().equals(user.getUid())) {
+                            String provider = "email";
+                            SaveUsers save = new SaveUsers(user.getUid(), user.getEmail(), user.getDisplayName(), provider);
+                            save.saveUser();
+                        }
                     }
                     Intent intent = new Intent(getActivity(), AppFoods.class);
                     startActivity(intent);

@@ -5,7 +5,7 @@ public class UserDatabase {
 
     private String name, photoUrl;
 
-    public UserDatabase (String name, String photoUrl){
+    public UserDatabase(){
         this.name = name;
         this.photoUrl = photoUrl;
     }

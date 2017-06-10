@@ -9,12 +9,23 @@ public class DatabaseUser {
     private String name;
     private String photoUrl;
     private String provider;
+    private String id;
 
-    public void DatabaseUser(String name, String photoUrl, String provider){
+    public  DatabaseUser(){
+
+    }
+
+    public  DatabaseUser(String name, String photoUrl, String provider){
         this.name  = name ;
         this.photoUrl = photoUrl;
         this.provider = provider;
     }
+
+    public  DatabaseUser(String name,  String provider){
+        this.name  = name ;
+        this.provider = provider;
+    }
+
 
     public void setNameDatabaseUser(String name ){
         this.name = name;
@@ -38,5 +49,11 @@ public class DatabaseUser {
 
     public String getProvider (){
         return this.provider;
+    }
+
+    public void setId (String id ) {this.id = id;}
+
+    public String getId (){
+        return this.id;
     }
 }

@@ -33,4 +33,9 @@
     <string name="title_activity_app_foods">Foods</string>
     <string name="title_activity_create__food">create_Food</string>
     <string name="title_activity_create_food">Foods</string>
+    <string name="title_activity_scroll_create_food">scroll_createFood</string>
+
+    <string name="title_activity_scrolling_create_food">Foods</string>
+    <string name="description">description</string>
+    <string name="upload_image_food">upload image Food</string>
 </resources>

@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -86,9 +87,6 @@ public class User extends Fragment implements View.OnClickListener {
     public void updateUser(){
         mAut.child("users").child(userId).child("name").setValue(user.getText().toString());
         mAut.child("users").child(userId).child("email").setValue(email.getText().toString());
-
-        mAut.child("foods").child("food").child(userId).child("user").setValue(user.getText().toString());
-        mAut.child("foods").child("food").child(userId).child("email").setValue(email.getText().toString());
     }
 
     public void updateImage(){
@@ -112,6 +110,7 @@ public class User extends Fragment implements View.OnClickListener {
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     addPhoto();
                     mProgress.dismiss();
+                    Log.d("ppppppppp", "foto subida");
                 }
             }).addOnFailureListener(new OnFailureListener(){
                 @Override
@@ -127,9 +126,7 @@ public class User extends Fragment implements View.OnClickListener {
         imRef.child("Food/"+userId+"profileUser").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
-                //Toast.makeText(getActivity(), userId, Toast.LENGTH_SHORT).show();
                 mAut.child("users").child(userId).child("photoUrl").setValue(uri.toString());
-                mAut.child("foods").child("food").child(userId).child("profilePhoto").setValue(uri.toString());
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override

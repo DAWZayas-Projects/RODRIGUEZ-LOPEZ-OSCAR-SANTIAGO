@@ -11,15 +11,17 @@ public class RecipeDatabase {
     private int people;
     private String name;
     private String photoUrl;
+    private String userId;
     private String provider;
 
-    public RecipeDatabase (String nameFood, String photo, String description, int favourite, int people){
+    public RecipeDatabase (String nameFood, String photo, String description, int favourite, int people, String userId ){
 
         this.nameFood = nameFood;
         this.photo = photo;
         this.description = description;
         this.favourite = favourite;
         this.people = people;
+        this.userId = userId;
 
     }
 
@@ -62,6 +64,8 @@ public class RecipeDatabase {
     public String getPhotoUrl(){
         return this.photoUrl;
     }
+
+    public String getUserId() {return this.userId;}
 
 
 
